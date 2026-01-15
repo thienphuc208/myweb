@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dichvuwebsite.vercel.app/sitemap.xml
