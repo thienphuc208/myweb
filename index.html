@@ -64,6 +64,11 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            padding: 5px 0;
         }
 
         .header-container {
@@ -71,6 +76,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            transition: all 0.3s ease;
         }
 
         .logo {
@@ -93,24 +99,47 @@
             font-size: 2rem;
         }
 
-        nav ul {
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .desktop-nav ul {
             display: flex;
             list-style: none;
         }
 
-        nav li {
+        .desktop-nav li {
             margin-left: 30px;
         }
 
-        nav a {
+        .desktop-nav a {
             text-decoration: none;
             color: var(--primary-color);
             font-weight: 600;
             transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
         }
 
-        nav a:hover {
+        .desktop-nav a:hover {
             color: var(--secondary-color);
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .desktop-nav a:hover::after {
+            width: 100%;
         }
 
         .cta-button {
@@ -120,18 +149,114 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary-color);
+            display: inline-block;
         }
 
         .cta-button:hover {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: white;
+            color: var(--secondary-color);
         }
 
-        .mobile-menu {
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
             display: none;
-            font-size: 1.5rem;
+            background: none;
+            border: none;
             cursor: pointer;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 5px 0;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px;
+            transition: right 0.4s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-nav .cta-button {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Hero Section */
@@ -151,7 +276,7 @@
             padding-right: 50px;
         }
 
-        .hero-text h2 {
+        .hero-text h1 {
             font-size: 2.8rem;
             color: var(--primary-color);
             margin-bottom: 20px;
@@ -436,7 +561,13 @@
             color: var(--secondary-color);
         }
 
-        /* Responsive */
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
@@ -448,30 +579,46 @@
                 text-align: center;
             }
 
-            .hero-text h2 {
+            .hero-text h1 {
                 font-size: 2.2rem;
+            }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
             }
         }
 
         @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
             .hero {
-                padding: 120px 0 80px;
+                padding: 130px 0 80px;
             }
 
-            .hero-text h2 {
-                font-size: 1.8rem;
+            .hero-text h1 {
+                font-size: 2rem;
             }
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+
+            .mobile-nav {
+                width: 280px;
+            }
+
+            .header-container {
+                padding: 10px 0;
+            }
+
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                font-size: 1.7rem;
             }
         }
 
@@ -485,24 +632,52 @@
             .process-steps {
                 flex-direction: column;
             }
+
+            .contact-container {
+                gap: 30px;
+            }
+
+            .footer-column {
+                min-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            .mobile-nav {
+                width: 100%;
+                padding: 80px 20px 20px;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
         <div class="container header-container">
             <div class="logo">
                 <i class="fas fa-code logo-icon"></i>
                 <h1>Thiên <span>Phúc</span></h1>
             </div>
 
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <nav>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#home">Trang chủ</a></li>
                     <li><a href="#services">Dịch vụ</a></li>
@@ -512,7 +687,29 @@
                     <li><a href="#contact" class="cta-button">Yêu cầu báo giá</a></li>
                 </ul>
             </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <!-- Mobile Navigation Menu -->
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#home" onclick="closeMobileMenu()">Trang chủ</a></li>
+                <li><a href="#services" onclick="closeMobileMenu()">Dịch vụ</a></li>
+                <li><a href="#process" onclick="closeMobileMenu()">Quy trình</a></li>
+                <li><a href="#portfolio" onclick="closeMobileMenu()">Dự án</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Liên hệ</a></li>
+                <li><a href="#contact" class="cta-button" onclick="closeMobileMenu()">Yêu cầu báo giá</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -781,14 +978,69 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function () {
-            const nav = document.querySelector('nav');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        });
-
         // Set current year in copyright
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            mobileMenuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+                document.querySelector('.header-container').style.padding = '10px 0';
+            } else {
+                header.classList.remove('header-scrolled');
+                document.querySelector('.header-container').style.padding = '15px 0';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate the header height for offset
+                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - headerHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
         // Form submission with email sending
         document.getElementById('projectRequestForm').addEventListener('submit', async function (e) {
@@ -847,23 +1099,11 @@
             }
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    document.querySelector('nav').style.display = 'none';
-
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        // Prevent form submission on Enter key
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
                 }
             });
         });
