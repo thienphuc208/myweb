@@ -113,7 +113,21 @@ header {
 .desktop-nav a:hover::after {
     width: 100%;
 }
-
+.cta-button1 {
+    background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+    color: white;
+    margin: -11px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
 /* CTA Button với gradient */
 .cta-button {
     /* background: linear-gradient(135deg, var(--secondary-color), #2980b9); */
