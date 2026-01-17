@@ -114,27 +114,21 @@ header {
     width: 100%;
 }
 
-/* CTA Button với gradient - ĐÃ SỬA */
+/* CTA Button với gradient */
 .cta-button {
-    background: linear-gradient(135deg, var(--secondary-color), #1a73e8);
+    /* background: linear-gradient(135deg, var(--secondary-color), #2980b9); */
     color: white;
-    padding: 12px 32px;
+    margin: -11px;
+    padding: 12px 30px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 600;
+    transition: all 0.3s;
     border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    font-size: 1rem;
-    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
-    text-transform: uppercase;
-    min-height: 48px;
 }
 
 .cta-button::before {
@@ -153,7 +147,8 @@ header {
 }
 
 .cta-button:hover {
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
+    color:white;
     box-shadow: 0 12px 25px rgba(52, 152, 219, 0.4);
     background: linear-gradient(135deg, #2980b9, #1565c0);
 }
