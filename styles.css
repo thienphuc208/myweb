@@ -26,12 +26,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
 body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
     background-color: #ffffff;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -46,6 +53,18 @@ h1, h2, h3, h4 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
 }
 
 .gradient-text {
@@ -77,6 +96,7 @@ h1, h2, h3, h4 {
 header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: var(--shadow-md);
     position: fixed;
     width: 100%;
@@ -105,7 +125,7 @@ header {
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
     color: var(--dark-color);
 }
 
@@ -115,14 +135,14 @@ header {
 
 .logo-icon {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 /* Desktop Navigation */
 .desktop-nav ul {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
     list-style: none;
 }
 
@@ -148,11 +168,11 @@ header {
 .cta-button {
     background: var(--gradient-primary);
     color: white;
-    padding: 12px 28px;
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 3vw, 28px);
     border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
     border: none;
     display: inline-flex;
     align-items: center;
@@ -161,6 +181,7 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .cta-button::before {
@@ -186,11 +207,11 @@ header {
 .cta-button1 {
     background: var(--gradient-accent);
     color: white;
-    padding: 14px 32px;
+    padding: clamp(12px, 2vw, 14px) clamp(24px, 3vw, 32px);
     border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     border: none;
     display: inline-flex;
     align-items: center;
@@ -198,6 +219,7 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    white-space: nowrap;
 }
 
 .cta-button1:hover {
@@ -208,17 +230,18 @@ header {
 .secondary-button {
     background: white;
     color: var(--primary-color);
-    padding: 14px 32px;
+    padding: clamp(12px, 2vw, 14px) clamp(24px, 3vw, 32px);
     border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     border: 2px solid var(--primary-color);
     display: inline-flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .secondary-button:hover {
@@ -259,7 +282,7 @@ header {
 
 /* Hero Section */
 .hero {
-    padding: 180px 0 100px;
+    padding: clamp(140px, 15vw, 180px) 0 clamp(80px, 10vw, 100px);
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     position: relative;
     overflow: hidden;
@@ -279,19 +302,18 @@ header {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: clamp(30px, 5vw, 60px);
     align-items: center;
     position: relative;
     z-index: 1;
 }
 
 .hero-text h1 {
-    font-size: 3.2rem;
     margin-bottom: 20px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--gray-color);
     margin-bottom: 30px;
     max-width: 90%;
@@ -299,14 +321,15 @@ header {
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
 }
 
 .feature-item {
@@ -314,10 +337,11 @@ header {
     align-items: center;
     gap: 8px;
     background: white;
-    padding: 10px 20px;
+    padding: clamp(8px, 1.5vw, 10px) clamp(15px, 2vw, 20px);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     font-weight: 500;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
 }
 
 .feature-item i {
@@ -348,16 +372,17 @@ header {
 
 .floating-card {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
+    bottom: clamp(20px, 3vw, 30px);
+    left: clamp(20px, 3vw, 30px);
     background: white;
-    padding: 20px;
+    padding: clamp(15px, 2vw, 20px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: clamp(10px, 2vw, 15px);
     animation: float 3s ease-in-out infinite;
+    max-width: 90%;
 }
 
 @keyframes float {
@@ -370,15 +395,26 @@ header {
 }
 
 .card-icon {
-    width: 50px;
-    height: 50px;
+    width: clamp(40px, 5vw, 50px);
+    height: clamp(40px, 5vw, 50px);
     background: var(--gradient-primary);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    flex-shrink: 0;
+}
+
+.card-content h4 {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: var(--gray-color);
 }
 
 .wave-divider {
@@ -394,29 +430,29 @@ header {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 100px;
+    height: clamp(50px, 8vw, 100px);
 }
 
 /* Clients Section */
 .clients {
-    padding: 80px 0;
+    padding: clamp(60px, 8vw, 80px) 0;
     background: white;
 }
 
 .clients-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: clamp(20px, 3vw, 30px);
 }
 
 .client-logo {
     background: white;
-    padding: 30px 20px;
+    padding: clamp(20px, 3vw, 30px) clamp(15px, 2vw, 20px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
     transition: all 0.3s ease;
 }
 
@@ -426,40 +462,39 @@ header {
 }
 
 .client-logo i {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     color: var(--primary-color);
 }
 
 .client-logo h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--dark-color);
     margin-bottom: 5px;
 }
 
 .client-logo p {
     color: var(--gray-color);
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
 /* Services Section */
 .services {
-    padding: 100px 0;
+    padding: clamp(80px, 10vw, 100px) 0;
     background: var(--light-color);
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: clamp(40px, 6vw, 60px);
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
 .section-subtitle {
     color: var(--gray-color);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -467,12 +502,12 @@ header {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: clamp(20px, 3vw, 30px);
 }
 
 .service-card {
     background: white;
-    padding: 40px 30px;
+    padding: clamp(30px, 4vw, 40px) clamp(20px, 3vw, 30px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
@@ -503,14 +538,14 @@ header {
 }
 
 .service-icon {
-    width: 70px;
-    height: 70px;
+    width: clamp(60px, 8vw, 70px);
+    height: clamp(60px, 8vw, 70px);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
-    font-size: 2rem;
+    margin-bottom: clamp(20px, 3vw, 25px);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: white;
 }
 
@@ -519,7 +554,6 @@ header {
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--dark-color);
 }
@@ -528,12 +562,13 @@ header {
     color: var(--gray-color);
     margin-bottom: 20px;
     line-height: 1.7;
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
 }
 
 .service-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 25px;
 }
 
@@ -542,7 +577,7 @@ header {
     color: var(--primary-color);
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 1.2vw, 0.85rem);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -557,6 +592,7 @@ header {
     align-items: center;
     gap: 8px;
     transition: gap 0.3s ease;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .service-link:hover {
@@ -565,7 +601,7 @@ header {
 
 /* Process Section */
 .process {
-    padding: 100px 0;
+    padding: clamp(80px, 10vw, 100px) 0;
     background: white;
     position: relative;
 }
@@ -590,22 +626,22 @@ header {
 .step {
     position: relative;
     z-index: 2;
-    margin-bottom: 60px;
+    margin-bottom: clamp(40px, 5vw, 60px);
     display: flex;
     align-items: flex-start;
-    gap: 30px;
+    gap: clamp(20px, 3vw, 30px);
 }
 
 .step-number {
     background: var(--gradient-primary);
     color: white;
-    width: 60px;
-    height: 60px;
+    width: clamp(50px, 6vw, 60px);
+    height: clamp(50px, 6vw, 60px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 700;
     flex-shrink: 0;
     box-shadow: var(--shadow-md);
@@ -613,15 +649,15 @@ header {
 
 .step-content {
     background: white;
-    padding: 25px;
+    padding: clamp(20px, 3vw, 25px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     flex: 1;
 }
 
 .step-icon {
-    width: 50px;
-    height: 50px;
+    width: clamp(40px, 5vw, 50px);
+    height: clamp(40px, 5vw, 50px);
     background: rgba(59, 130, 246, 0.1);
     border-radius: var(--radius-md);
     display: flex;
@@ -629,25 +665,29 @@ header {
     justify-content: center;
     margin-bottom: 15px;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 
 .step-content h3 {
-    font-size: 1.3rem;
     margin-bottom: 10px;
     color: var(--dark-color);
 }
 
+.step-content p {
+    color: var(--gray-color);
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
+}
+
 /* Portfolio Section */
 .portfolio {
-    padding: 100px 0;
+    padding: clamp(80px, 10vw, 100px) 0;
     background: var(--light-color);
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 3vw, 30px);
 }
 
 .portfolio-item {
@@ -665,7 +705,7 @@ header {
 
 .portfolio-image {
     position: relative;
-    height: 250px;
+    height: clamp(200px, 25vw, 250px);
     overflow: hidden;
 }
 
@@ -699,15 +739,15 @@ header {
 }
 
 .view-project {
-    width: 60px;
-    height: 60px;
+    width: clamp(50px, 6vw, 60px);
+    height: clamp(50px, 6vw, 60px);
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     text-decoration: none;
     transform: scale(0);
     transition: transform 0.3s ease;
@@ -718,11 +758,10 @@ header {
 }
 
 .portfolio-content {
-    padding: 25px;
+    padding: clamp(20px, 3vw, 25px);
 }
 
 .portfolio-content h3 {
-    font-size: 1.3rem;
     margin-bottom: 10px;
     color: var(--dark-color);
 }
@@ -730,6 +769,7 @@ header {
 .portfolio-content p {
     color: var(--gray-color);
     margin-bottom: 15px;
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
 }
 
 .portfolio-tags {
@@ -743,13 +783,13 @@ header {
     color: var(--primary-color);
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 1.2vw, 0.8rem);
     font-weight: 500;
 }
 
 /* Testimonials Section */
 .testimonials {
-    padding: 100px 0;
+    padding: clamp(80px, 10vw, 100px) 0;
     background: white;
 }
 
@@ -760,14 +800,14 @@ header {
 
 .testimonial-item {
     background: var(--light-color);
-    padding: 40px;
+    padding: clamp(30px, 4vw, 40px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     margin-bottom: 30px;
 }
 
 .testimonial-content p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     color: var(--dark-color);
     font-style: italic;
     margin-bottom: 25px;
@@ -780,7 +820,7 @@ header {
     position: absolute;
     left: 0;
     top: -15px;
-    font-size: 4rem;
+    font-size: clamp(3rem, 5vw, 4rem);
     color: var(--primary-color);
     opacity: 0.2;
     font-family: serif;
@@ -789,48 +829,50 @@ header {
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
+    flex-wrap: wrap;
 }
 
 .testimonial-author img {
-    width: 60px;
-    height: 60px;
+    width: clamp(50px, 6vw, 60px);
+    height: clamp(50px, 6vw, 60px);
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .testimonial-author h4 {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     margin-bottom: 5px;
 }
 
 .testimonial-author p {
     color: var(--gray-color);
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.9rem);
 }
 
 .rating {
     margin-left: auto;
     color: var(--warning-color);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
 /* CTA Banner */
 .cta-banner {
-    padding: 100px 0;
+    padding: clamp(80px, 10vw, 100px) 0;
     background: var(--gradient-dark);
     color: white;
     text-align: center;
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 20px;
     color: white;
 }
 
 .cta-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     opacity: 0.9;
     margin-bottom: 40px;
     max-width: 600px;
@@ -840,26 +882,26 @@ header {
 
 /* Contact Section */
 .contact {
-    padding: 100px 0;
+    padding: clamp(80px, 10vw, 100px) 0;
     background: var(--light-color);
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: clamp(30px, 4vw, 50px);
 }
 
 .info-card, .why-us-card {
     background: white;
-    padding: 30px;
+    padding: clamp(25px, 3vw, 30px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     margin-bottom: 30px;
 }
 
 .info-card h3, .why-us-card h3 {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     margin-bottom: 25px;
     color: var(--dark-color);
     display: flex;
@@ -876,20 +918,23 @@ header {
 
 .contact-detail i {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .contact-detail strong {
     display: block;
     margin-bottom: 5px;
     color: var(--dark-color);
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
 }
 
-.contact-detail a {
+.contact-detail a, .contact-detail p {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .contact-detail a:hover {
@@ -906,10 +951,12 @@ header {
     gap: 12px;
     margin-bottom: 15px;
     color: var(--gray-color);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .why-us-card li i {
     color: var(--success-color);
+    flex-shrink: 0;
 }
 
 .form-header {
@@ -917,7 +964,7 @@ header {
 }
 
 .form-header h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin-bottom: 10px;
     color: var(--dark-color);
     display: flex;
@@ -927,12 +974,13 @@ header {
 
 .form-header p {
     color: var(--gray-color);
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
     margin-bottom: 20px;
 }
 
@@ -948,14 +996,15 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .form-control {
     width: 100%;
-    padding: 14px 20px;
+    padding: clamp(12px, 2vw, 14px) clamp(15px, 2vw, 20px);
     border: 2px solid #e2e8f0;
     border-radius: var(--radius-md);
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
     transition: all 0.3s ease;
     background: white;
 }
@@ -967,40 +1016,41 @@ header {
 }
 
 textarea.form-control {
-    min-height: 150px;
+    min-height: clamp(120px, 20vw, 150px);
     resize: vertical;
 }
 
 .submit-button {
     width: 100%;
     justify-content: center;
-    padding: 16px;
-    font-size: 1.1rem;
+    padding: clamp(14px, 2vw, 16px);
+    font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
 .form-note {
     text-align: center;
     margin-top: 20px;
     color: var(--gray-color);
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.9rem);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 /* Footer */
 footer {
     background: var(--dark-color);
     color: white;
-    padding: 80px 0 30px;
+    padding: clamp(60px, 8vw, 80px) 0 clamp(25px, 3vw, 30px);
 }
 
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 50px;
+    gap: clamp(30px, 4vw, 40px);
+    margin-bottom: clamp(40px, 5vw, 50px);
 }
 
 .footer-logo {
@@ -1011,12 +1061,12 @@ footer {
 }
 
 .footer-logo i {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--primary-color);
 }
 
 .footer-logo h3 {
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
     color: white;
 }
 
@@ -1028,23 +1078,24 @@ footer {
     color: #94a3b8;
     margin-bottom: 25px;
     line-height: 1.7;
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
 }
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: clamp(10px, 2vw, 15px);
 }
 
 .social-link {
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 4vw, 40px);
+    height: clamp(35px, 4vw, 40px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     transition: all 0.3s ease;
 }
 
@@ -1058,7 +1109,7 @@ footer {
 }
 
 .footer-column h3 {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     margin-bottom: 25px;
     color: white;
 }
@@ -1078,6 +1129,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .footer-column ul li a:hover {
@@ -1091,11 +1143,13 @@ footer {
     gap: 15px;
     margin-bottom: 20px;
     color: #94a3b8;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .contact-list i {
     color: var(--primary-color);
     margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .contact-list a {
@@ -1118,18 +1172,20 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .payment-icons {
     display: flex;
-    gap: 15px;
-    font-size: 1.8rem;
+    gap: clamp(10px, 2vw, 15px);
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
     color: #94a3b8;
+    flex-wrap: wrap;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
+    padding-top: clamp(20px, 3vw, 30px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1139,7 +1195,7 @@ footer {
 
 .copyright {
     color: #94a3b8;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
 .copyright strong {
@@ -1148,13 +1204,13 @@ footer {
 
 .footer-links {
     display: flex;
-    gap: 30px;
+    gap: clamp(15px, 3vw, 30px);
 }
 
 .footer-links a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     transition: color 0.3s ease;
 }
 
@@ -1163,12 +1219,12 @@ footer {
 }
 
 /* Floating Buttons */
-.whatsapp-float, .messenger-float {
+.whatsapp-float {
     position: fixed;
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 15px 25px;
+    padding: clamp(12px, 2vw, 15px) clamp(20px, 3vw, 25px);
     border-radius: 50px;
     color: white;
     text-decoration: none;
@@ -1176,21 +1232,13 @@ footer {
     box-shadow: var(--shadow-lg);
     z-index: 999;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.whatsapp-float {
     bottom: 30px;
-    left: 30px;
+    left: clamp(15px, 3vw, 30px);
     background: #25D366;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
 }
 
-.messenger-float {
-    bottom: 30px;
-    right: 30px;
-    background: #0099ff;
-}
-
-.whatsapp-float:hover, .messenger-float:hover {
+.whatsapp-float:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: var(--shadow-xl);
 }
@@ -1199,11 +1247,11 @@ footer {
     opacity: 0;
     transform: translateX(10px);
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    white-space: nowrap;
 }
 
-.whatsapp-float:hover .float-text,
-.messenger-float:hover .float-text {
+.whatsapp-float:hover .float-text {
     opacity: 1;
     transform: translateX(0);
 }
@@ -1211,23 +1259,31 @@ footer {
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
+    bottom: clamp(80px, 12vw, 100px);
+    right: clamp(15px, 3vw, 30px);
+    width: clamp(45px, 5vw, 50px);
+    height: clamp(45px, 5vw, 50px);
     background: var(--gradient-primary);
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
     z-index: 998;
     box-shadow: var(--shadow-lg);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .back-to-top:hover {
@@ -1245,6 +1301,7 @@ footer {
     height: 30px;
     position: relative;
     z-index: 1001;
+    padding: 0;
 }
 
 .mobile-menu-btn span {
@@ -1273,11 +1330,11 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 350px;
+    width: min(350px, 85vw);
     height: 100vh;
     background: white;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-    padding: 80px 30px 30px;
+    padding: 80px clamp(20px, 3vw, 30px) 30px;
     transition: right 0.4s ease;
     z-index: 1000;
     overflow-y: auto;
@@ -1303,6 +1360,7 @@ footer {
     color: var(--dark-color);
     cursor: pointer;
     padding: 5px;
+    line-height: 1;
 }
 
 .mobile-nav ul {
@@ -1318,7 +1376,7 @@ footer {
     text-decoration: none;
     color: var(--dark-color);
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     display: flex;
     align-items: center;
     gap: 15px;
@@ -1336,6 +1394,7 @@ footer {
     width: 100%;
     justify-content: center;
     margin-top: 20px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .mobile-contact-info {
@@ -1350,6 +1409,7 @@ footer {
     gap: 10px;
     margin-bottom: 10px;
     color: var(--dark-color);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .mobile-overlay {
@@ -1370,19 +1430,68 @@ footer {
     visibility: visible;
 }
 
+/* Message and Loading Spinner */
+.message {
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    display: none;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.message.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.message.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 992px) {
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    .hero-text h1 {
-        font-size: 2.8rem;
-    }
-    
     .hero::before {
         width: 60%;
+    }
+    
+    .floating-card {
+        max-width: 300px;
+    }
+    
+    .process-line {
+        left: 40px;
+        right: 40px;
     }
 }
 
@@ -1396,58 +1505,107 @@ footer {
     }
     
     .hero {
-        padding: 140px 0 80px;
-    }
-    
-    .hero-text h1 {
-        font-size: 2.3rem;
+        padding: 120px 0 60px;
     }
     
     .hero-buttons {
         flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .hero-buttons a {
+        justify-content: center;
     }
     
     .hero-features {
         flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .floating-card {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 20px;
+        max-width: 100%;
     }
     
     .contact-container {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
     
     .form-row {
         grid-template-columns: 1fr;
     }
     
-    .whatsapp-float, .messenger-float {
-        padding: 12px;
-        width: 50px;
-        height: 50px;
-    }
-    
-    .float-text {
+    .process-line {
         display: none;
     }
     
-    .whatsapp-float:hover, .messenger-float:hover {
+    .step {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .step-number {
+        margin-bottom: 15px;
+    }
+    
+    .step-content {
+        width: 100%;
+    }
+    
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .rating {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+    
+    .whatsapp-float {
+        padding: 12px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+    
+    .whatsapp-float .float-text {
+        display: none;
+    }
+    
+    .whatsapp-float:hover {
         width: auto;
         padding: 12px 25px;
     }
     
-    .whatsapp-float:hover .float-text,
-    .messenger-float:hover .float-text {
+    .whatsapp-float:hover .float-text {
         display: block;
     }
 }
 
 @media (max-width: 576px) {
     .container {
-        width: 95%;
+        width: 100%;
         padding: 0 15px;
     }
     
     .section-title h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .services-grid,
@@ -1460,12 +1618,132 @@ footer {
         padding: 80px 20px 30px;
     }
     
-    .footer-bottom {
+    .clients-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-button1,
+    .secondary-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .client-logo {
         flex-direction: column;
         text-align: center;
     }
     
-    .footer-links {
-        justify-content: center;
+    .clients-logos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:hover,
+    .portfolio-item:hover,
+    .client-logo:hover {
+        transform: none;
+    }
+    
+    .desktop-nav a:hover {
+        background: transparent;
+    }
+    
+    .cta-button:hover,
+    .cta-button1:hover,
+    .secondary-button:hover {
+        transform: none;
+    }
+    
+    .back-to-top:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0056b3;
+        --secondary-color: #004494;
+        --accent-color: #c00;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .pulse-animation,
+    .glow-effect,
+    .floating-card {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    header,
+    .whatsapp-float,
+    .back-to-top,
+    .cta-banner,
+    .mobile-nav,
+    .mobile-overlay {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt !important;
+    }
+    
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+    
+    .hero {
+        padding: 20px 0 !important;
+        background: white !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+    
+    .gradient-text {
+        background: none !important;
+        color: black !important;
     }
 }
