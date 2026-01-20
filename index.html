@@ -25,17 +25,36 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Thiên Phúc – Thiết kế Website Chuyên nghiệp">
     <meta name="twitter:description" content="Thiết kế website chuẩn SEO, giao diện đẹp, responsive.">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Thiên Phúc Web",
-  "url": "https://dichvuwebsite.vercel.app/",
-  "logo": "https://dichvuwebsite.vercel.app/logo.png"
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Thiên Phúc Web",
+      "url": "https://dichvuwebsite.vercel.app/",
+      "logo": "https://dichvuwebsite.vercel.app/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84-938842947",
+        "contactType": "Customer Service",
+        "areaServed": "VN",
+        "availableLanguage": "Vietnamese"
+      }
+    }
+    </script>
 
 </head>
 
@@ -51,12 +70,13 @@
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="#services">Dịch vụ</a></li>
-                    <li><a href="#process">Quy trình</a></li>
-                    <li><a href="#portfolio">Dự án</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                    <li><a href="#contact" class="cta-button">Yêu cầu báo giá</a></li>
+                    <li><a href="#home"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="#services"><i class="fas fa-cogs"></i> Dịch vụ</a></li>
+                    <li><a href="#process"><i class="fas fa-list-ol"></i> Quy trình</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Dự án</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-comments"></i> Đánh giá</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                    <li><a href="#contact" class="cta-button glow-effect"><i class="fas fa-paper-plane"></i> Báo giá ngay</a></li>
                 </ul>
             </nav>
 
@@ -73,30 +93,79 @@
 
         <!-- Mobile Navigation Menu -->
         <nav class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-header">
+                <h3>Thiên Phúc Web</h3>
+                <button class="close-menu-btn" id="closeMenuBtn" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             <ul>
-                <li><a href="#home" onclick="closeMobileMenu()">Trang chủ</a></li>
-                <li><a href="#services" onclick="closeMobileMenu()">Dịch vụ</a></li>
-                <li><a href="#process" onclick="closeMobileMenu()">Quy trình</a></li>
-                <li><a href="#portfolio" onclick="closeMobileMenu()">Dự án</a></li>
-                <li><a href="#contact" onclick="closeMobileMenu()">Liên hệ</a></li>
-                <li><a href="#contact" class="cta-button" onclick="closeMobileMenu()">Yêu cầu báo giá</a></li>
+                <li><a href="#home" onclick="closeMobileMenu()"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="#services" onclick="closeMobileMenu()"><i class="fas fa-cogs"></i> Dịch vụ</a></li>
+                <li><a href="#process" onclick="closeMobileMenu()"><i class="fas fa-list-ol"></i> Quy trình</a></li>
+                <li><a href="#portfolio" onclick="closeMobileMenu()"><i class="fas fa-briefcase"></i> Dự án</a></li>
+                <li><a href="#testimonials" onclick="closeMobileMenu()"><i class="fas fa-comments"></i> Đánh giá</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="#contact" class="cta-button mobile-cta" onclick="closeMobileMenu()"><i class="fas fa-paper-plane"></i> Yêu cầu báo giá</a></li>
             </ul>
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone-alt"></i> 0938.842.947</p>
+                <p><i class="fas fa-envelope"></i> nguyenhongthienphuc3620@gmail.com</p>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Thiết kế Website Chuyên nghiệp tại TP.HCM – Thiên Phúc</h1>
-                <p>Chúng tôi cung cấp dịch vụ thiết kế website và chỉnh sửa giao diện web hoàn toàn tùy biến theo nhu
-                    cầu của khách hàng. Đội ngũ chuyên gia của Thiên Phúc sẽ biến ý tưởng của bạn thành hiện thực.</p>
-                <a href="#contact" class="cta-button1">Bắt đầu dự án của bạn</a>
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="gradient-text">Thiết Kế Website <br><span class="highlight">Chuyên Nghiệp</span> Tại TP.HCM</h1>
+                <p class="hero-subtitle">Biến ý tưởng của bạn thành website hoàn hảo với dịch vụ thiết kế web tùy chỉnh, chuẩn SEO và responsive đa thiết bị.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button1 pulse-animation">
+                        <i class="fas fa-rocket"></i> Bắt đầu dự án
+                    </a>
+                    <a href="#portfolio" class="secondary-button">
+                        <i class="fas fa-eye"></i> Xem dự án mẫu
+                    </a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Bảo hành 12 tháng</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Hỗ trợ 24/7</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Cam kết SEO top Google</span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Thiết kế website">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Thiết kế website chuyên nghiệp">
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>50+ Dự án thành công</h4>
+                            <p>Khách hàng hài lòng</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
         </div>
     </section>
 
@@ -104,10 +173,34 @@
     <section class="clients">
         <div class="container">
             <div class="clients-logos">
-                <div class="client-logo">⭐ 5.0 Đánh giá</div>
-                <div class="client-logo">🏆 50+ Dự án</div>
-                <div class="client-logo">👍 100% Hài lòng</div>
-                <div class="client-logo">⚡ Bàn giao nhanh</div>
+                <div class="client-logo">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h3>5.0</h3>
+                        <p>Đánh giá</p>
+                    </div>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-project-diagram"></i>
+                    <div>
+                        <h3>50+</h3>
+                        <p>Dự án</p>
+                    </div>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-smile"></i>
+                    <div>
+                        <h3>100%</h3>
+                        <p>Hài lòng</p>
+                    </div>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h3>7 ngày</h3>
+                        <p>Bàn giao nhanh</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -115,45 +208,66 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Dịch vụ của chúng tôi</h2>
-                <p>Chúng tôi cung cấp các giải pháp web toàn diện để đáp ứng mọi nhu cầu kinh doanh của bạn</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Dịch Vụ <span class="highlight">Chuyên Nghiệp</span></h2>
+                <p class="section-subtitle">Giải pháp web toàn diện cho mọi nhu cầu kinh doanh của bạn</p>
             </div>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-icon gradient-bg">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Thiết kế Website mới</h3>
-                    <p>Thiết kế website từ A-Z theo yêu cầu riêng của khách hàng, tối ưu trải nghiệm người dùng và hiệu
-                        quả kinh doanh.</p>
+                    <p>Thiết kế website từ A-Z theo yêu cầu riêng, tối ưu trải nghiệm người dùng và hiệu quả kinh doanh.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Chuẩn SEO</span>
+                        <span><i class="fas fa-check"></i> Responsive</span>
+                        <span><i class="fas fa-check"></i> Tốc độ cao</span>
+                    </div>
+                    <a href="#contact" class="service-link">Nhận tư vấn <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-icon gradient-bg">
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3>Chỉnh sửa Giao diện Web</h3>
-                    <p>Cải thiện, nâng cấp và chỉnh sửa giao diện website hiện có để đáp ứng nhu cầu thay đổi của khách
-                        hàng.</p>
+                    <p>Cải thiện, nâng cấp và chỉnh sửa giao diện website hiện có để đáp ứng nhu cầu thay đổi.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Giao diện mới</span>
+                        <span><i class="fas fa-check"></i> UX/UI cải tiến</span>
+                        <span><i class="fas fa-check"></i> Tối ưu tốc độ</span>
+                    </div>
+                    <a href="#contact" class="service-link">Nhận báo giá <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-icon gradient-bg">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Thiết kế Responsive</h3>
                     <p>Đảm bảo website hiển thị hoàn hảo trên mọi thiết bị: máy tính, tablet và điện thoại di động.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Mobile-first</span>
+                        <span><i class="fas fa-check"></i> Cross-browser</span>
+                        <span><i class="fas fa-check"></i> Adaptive</span>
+                    </div>
+                    <a href="#contact" class="service-link">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="service-icon gradient-bg">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>Website Thương mại Điện tử</h3>
-                    <p>Phát triển website bán hàng với đầy đủ tính năng: giỏ hàng, thanh toán, quản lý đơn hàng và khách
-                        hàng.</p>
+                    <h3>Website TMĐT</h3>
+                    <p>Phát triển website bán hàng với đầy đủ tính năng: giỏ hàng, thanh toán, quản lý đơn hàng.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Thanh toán online</span>
+                        <span><i class="fas fa-check"></i> Quản lý kho</span>
+                        <span><i class="fas fa-check"></i> Báo cáo doanh thu</span>
+                    </div>
+                    <a href="#contact" class="service-link">Xem demo <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -162,34 +276,65 @@
     <!-- Process Section -->
     <section class="process" id="process">
         <div class="container">
-            <div class="section-title">
-                <h2>Quy trình làm việc</h2>
-                <p>Chúng tôi tuân thủ quy trình chuyên nghiệp để đảm bảo chất lượng và tiến độ dự án</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Quy Trình <span class="highlight">Làm Việc</span></h2>
+                <p class="section-subtitle">6 bước đơn giản để có website chuyên nghiệp</p>
             </div>
 
             <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Tiếp nhận yêu cầu</h3>
-                    <p>Lắng nghe và phân tích nhu cầu cụ thể của khách hàng</p>
+                <div class="process-line"></div>
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Tư vấn & Phân tích</h3>
+                        <p>Lắng nghe và phân tích nhu cầu cụ thể của khách hàng</p>
+                    </div>
                 </div>
 
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Thiết kế & Lên kế hoạch</h3>
-                    <p>Lên ý tưởng, thiết kế giao diện và xây dựng kế hoạch thực hiện</p>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-pen-nib"></i></div>
+                        <h3>Thiết kế & Lên ý tưởng</h3>
+                        <p>Lên ý tưởng, thiết kế giao diện và xây dựng kế hoạch thực hiện</p>
+                    </div>
                 </div>
 
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Phát triển & Chỉnh sửa</h3>
-                    <p>Triển khai phát triển website và chỉnh sửa theo yêu cầu</p>
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                        <h3>Phát triển & Lập trình</h3>
+                        <p>Triển khai phát triển website với công nghệ mới nhất</p>
+                    </div>
                 </div>
 
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Bàn giao & Hỗ trợ</h3>
-                    <p>Bàn giao sản phẩm và hỗ trợ khách hàng sau khi hoàn thành</p>
+                <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Kiểm thử & Chỉnh sửa</h3>
+                        <p>Kiểm tra chất lượng và chỉnh sửa theo yêu cầu khách hàng</p>
+                    </div>
+                </div>
+
+                <div class="step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Triển khai & Bàn giao</h3>
+                        <p>Triển khai lên hosting và bàn giao sản phẩm hoàn chỉnh</p>
+                    </div>
+                </div>
+
+                <div class="step" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Bảo trì & Hỗ trợ</h3>
+                        <p>Hỗ trợ kỹ thuật và bảo trì website sau khi bàn giao</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,38 +343,136 @@
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
-            <div class="section-title">
-                <h2>Dự án tiêu biểu</h2>
-                <p>Một số website chúng tôi đã thiết kế và chỉnh sửa cho khách hàng</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Dự Án <span class="highlight">Tiêu Biểu</span></h2>
+                <p class="section-subtitle">Một số website chúng tôi đã thiết kế và chỉnh sửa cho khách hàng</p>
             </div>
 
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="/website dịch vụ điệnt hoại.jpg"
-                        alt="Website thương mại điện tử chuyên nghiệp">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-image">
+                        <img src="/website dịch vụ điệnt hoại.jpg" alt="Website thương mại điện tử chuyên nghiệp">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="portfolio-content">
-                        <h3>Website TMĐT</h3>
-                        <p>Thiết kế website bán hàng với đầy đủ tính năng</p>
+                        <h3>Website TMĐT Điện Thoại</h3>
+                        <p>Thiết kế website bán hàng với đầy đủ tính năng, thanh toán online</p>
+                        <div class="portfolio-tags">
+                            <span>E-commerce</span>
+                            <span>Responsive</span>
+                            <span>SEO</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <img src="/techstore.png"
-                        alt="Website doanh nghiệp chuẩn SEO">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <img src="/techstore.png" alt="Website doanh nghiệp chuẩn SEO">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="portfolio-content">
-                        <h3>Website Doanh nghiệp</h3>
-                        <p>Thiết kế chuẩn SEO, tốc độ tải nhanh</p>
+                        <h3>Tech Store Website</h3>
+                        <p>Website công nghệ với giao diện hiện đại, tốc độ tải nhanh</p>
+                        <div class="portfolio-tags">
+                            <span>Business</span>
+                            <span>Modern</span>
+                            <span>Fast</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <img src="/Screenshot 2026-01-19 200403.png"
-                        alt="Website dịch vụ uy tín">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <img src="/Screenshot 2026-01-19 200403.png" alt="Website dịch vụ uy tín">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="portfolio-content">
-                        <h3>Website Dịch vụ</h3>
-                        <p>Giao diện chuyên nghiệp, dễ sử dụng</p>
+                        <h3>Website Dịch vụ Chuyên nghiệp</h3>
+                        <p>Giao diện chuyên nghiệp, dễ sử dụng, tối ưu trải nghiệm người dùng</p>
+                        <div class="portfolio-tags">
+                            <span>Service</span>
+                            <span>Professional</span>
+                            <span>UX/UI</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Khách Hàng <span class="highlight">Nói Gì</span></h2>
+                <p class="section-subtitle">Nhận xét từ những khách hàng đã hợp tác với chúng tôi</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-item" data-aos="fade-up">
+                    <div class="testimonial-content">
+                        <p>"Thiên Phúc đã thiết kế website bán hàng cho tôi rất chuyên nghiệp. Website chuẩn SEO, tải nhanh và dễ quản lý. Doanh thu tăng 40% sau 3 tháng."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Khách hàng">
+                        <div>
+                            <h4>Anh Minh</h4>
+                            <p>Chủ cửa hàng điện thoại</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <p>"Dịch vụ chỉnh sửa website rất tốt. Đội ngũ hỗ trợ nhiệt tình, làm việc nhanh chóng. Giao diện mới thu hút khách hàng hơn hẳn."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Khách hàng">
+                        <div>
+                            <h4>Chị Lan</h4>
+                            <p>Giám đốc Marketing</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Sẵn sàng tạo website chuyên nghiệp?</h2>
+                <p>Liên hệ ngay để được tư vấn miễn phí và nhận báo giá ưu đãi</p>
+                <a href="#contact" class="cta-button1 pulse-animation">
+                    <i class="fas fa-phone-alt"></i> Gọi ngay: 0938.842.947
+                </a>
             </div>
         </div>
     </section>
@@ -237,34 +480,64 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Liên hệ với chúng tôi</h2>
-                <p>Gửi yêu cầu của bạn và chúng tôi sẽ liên hệ tư vấn miễn phí trong vòng 24 giờ</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Liên Hệ <span class="highlight">Với Chúng Tôi</span></h2>
+                <p class="section-subtitle">Gửi yêu cầu và nhận tư vấn miễn phí trong 24 giờ</p>
             </div>
 
             <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Thông tin liên hệ</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> Phường Chánh Hưng TP. Hồ Chí Minh
-                    </p>
-                    <p><i class="fas fa-phone"></i> <strong>Điện thoại:</strong> 0938842947</p>
-                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> nguyenhongthienphuc3620@gmail.com</p>
-                    <p><i class="fas fa-clock"></i> <strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7: 8:00 - 18:00</p>
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> Thông tin liên hệ</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Địa chỉ:</strong>
+                                <p>Phường Chánh Hưng, Quận 8, TP. Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Điện thoại:</strong>
+                                <p><a href="tel:0938842947">0938.842.947</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <p><a href="mailto:nguyenhongthienphuc3620@gmail.com">nguyenhongthienphuc3620@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Giờ làm việc:</strong>
+                                <p>Thứ 2 - Thứ 7: 8:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <h3 style="margin-top: 30px;">Tại sao chọn Thiên Phúc?</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Thiết kế theo yêu
-                            cầu riêng của khách hàng</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Hỗ trợ chỉnh sửa
-                            không giới hạn trong quá trình thiết kế</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Bảo hành và hỗ trợ
-                            kỹ thuật sau bàn giao</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Cam kết bàn giao
-                            đúng tiến độ</li>
-                    </ul>
+                    <div class="why-us-card">
+                        <h3><i class="fas fa-trophy"></i> Tại sao chọn Thiên Phúc?</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Thiết kế theo yêu cầu riêng</li>
+                            <li><i class="fas fa-check"></i> Hỗ trợ chỉnh sửa không giới hạn</li>
+                            <li><i class="fas fa-check"></i> Bảo hành 12 tháng sau bàn giao</li>
+                            <li><i class="fas fa-check"></i> Cam kết bàn giao đúng tiến độ</li>
+                            <li><i class="fas fa-check"></i> Tư vấn SEO miễn phí</li>
+                            <li><i class="fas fa-check"></i> Hỗ trợ kỹ thuật 24/7</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="contact-form">
+                <div class="contact-form" data-aos="fade-left">
+                    <div class="form-header">
+                        <h3><i class="fas fa-paper-plane"></i> Gửi yêu cầu tư vấn</h3>
+                        <p>Điền thông tin để nhận báo giá chi tiết</p>
+                    </div>
+
                     <!-- Form messages -->
                     <div id="form-messages" class="message"></div>
 
@@ -272,43 +545,51 @@
                     <div id="loading-spinner" class="spinner"></div>
 
                     <form id="projectRequestForm" action="https://formspree.io/f/xkoogprl" method="POST">
-                        <div class="form-group">
-                            <label for="name">Họ và tên *</label>
-                            <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" class="form-control" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Họ và tên *</label>
+                                <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone"><i class="fas fa-phone"></i> Số điện thoại *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" class="form-control" required>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="email"><i class="fas fa-envelope"></i> Email *</label>
                             <input type="email" id="email" name="email" placeholder="Nhập email của bạn" class="form-control" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Số điện thoại *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn" class="form-control" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service">Dịch vụ quan tâm *</label>
+                            <label for="service"><i class="fas fa-cogs"></i> Dịch vụ quan tâm *</label>
                             <select id="service" name="service" class="form-control" required>
-                                <option value="">Chọn dịch vụ</option>
+                                <option value="">Chọn dịch vụ bạn cần</option>
                                 <option value="new-website">Thiết kế website mới</option>
                                 <option value="redesign">Chỉnh sửa giao diện web</option>
                                 <option value="ecommerce">Website thương mại điện tử</option>
+                                <option value="seo">Tối ưu SEO website</option>
                                 <option value="other">Dịch vụ khác</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Mô tả yêu cầu chi tiết *</label>
-                            <textarea id="message" name="message" placeholder="Mô tả chi tiết yêu cầu của bạn" class="form-control" required></textarea>
+                            <label for="message"><i class="fas fa-comment-dots"></i> Mô tả yêu cầu chi tiết *</label>
+                            <textarea id="message" name="message" placeholder="Mô tả chi tiết yêu cầu của bạn, ngân sách dự kiến, thời gian cần hoàn thành..." class="form-control" rows="4" required></textarea>
                         </div>
 
-                        <!-- Hidden field to send email to your address -->
+                        <!-- Hidden fields -->
                         <input type="hidden" name="_replyto" value="nguyenhongthienphuc3620@gmail.com">
                         <input type="hidden" name="_subject" value="Yêu cầu thiết kế website từ khách hàng">
 
-                        <button type="submit" class="cta-button" style="width: 100%; padding: 15px;">Gửi yêu
-                            cầu</button>
+                        <button type="submit" class="cta-button submit-button">
+                            <i class="fas fa-paper-plane"></i> Gửi yêu cầu ngay
+                        </button>
+                        
+                        <p class="form-note">
+                            <i class="fas fa-shield-alt"></i> Thông tin của bạn được bảo mật tuyệt đối
+                        </p>
                     </form>
                 </div>
             </div>
@@ -320,75 +601,114 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <h3>Thiên Phúc Web</h3>
-                    <p>Chuyên thiết kế website và chỉnh sửa giao diện web theo yêu cầu riêng của khách hàng. Cam kết
-                        chất lượng và sự hài lòng.</p>
-                    <div style="margin-top: 20px;">
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <h3>Thiên Phúc <span>Web</span></h3>
+                    </div>
+                    <p class="footer-description">Chuyên thiết kế website và chỉnh sửa giao diện web theo yêu cầu riêng. Cam kết chất lượng và sự hài lòng tuyệt đối.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link zalo"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-column">
                     <h3>Dịch vụ</h3>
                     <ul>
-                        <li><a href="#services">Thiết kế Website mới</a></li>
-                        <li><a href="#services">Chỉnh sửa Giao diện Web</a></li>
-                        <li><a href="#services">Thiết kế Responsive</a></li>
-                        <li><a href="#services">Website Thương mại Điện tử</a></li>
-                        <li><a href="#services">Tối ưu hóa Website</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Thiết kế Website mới</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Chỉnh sửa Giao diện Web</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Thiết kế Responsive</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Website Thương mại Điện tử</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Tối ưu hóa SEO</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3>Liên kết nhanh</h3>
                     <ul>
-                        <li><a href="#home">Trang chủ</a></li>
-                        <li><a href="#services">Dịch vụ</a></li>
-                        <li><a href="#process">Quy trình</a></li>
-                        <li><a href="#portfolio">Dự án</a></li>
-                        <li><a href="#contact">Liên hệ</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Trang chủ</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Dịch vụ</a></li>
+                        <li><a href="#process"><i class="fas fa-chevron-right"></i> Quy trình</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Dự án</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Liên hệ</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3>Liên hệ</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Phường Chánh Hưng TP. Hồ Chí Minh</li>
-                        <li><i class="fas fa-phone"></i> 0938842947</li>
-                        <li><i class="fas fa-envelope"></i> nguyenhongthienphuc3620@gmail.com</li>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Phường Chánh Hưng, Quận 8, TP.HCM</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:0938842947">0938.842.947</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:nguyenhongthienphuc3620@gmail.com">nguyenhongthienphuc3620@gmail.com</a></li>
                     </ul>
+                    <div class="payment-methods">
+                        <p><i class="fas fa-credit-card"></i> Chấp nhận thanh toán:</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fas fa-money-bill-wave"></i>
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="copyright">
-                <p>&copy; <span id="currentYear">2026</span> Thiên Phúc Web. Tất cả các quyền được bảo lưu. | Thiết kế
-                    bởi <strong>Thiên Phúc</strong></p>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear">2026</span> Thiên Phúc Web. Bảo lưu mọi quyền. | Thiết kế bởi <strong>Thiên Phúc</strong></p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản dịch vụ</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://zalo.me/84938842947" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://zalo.me/84938842947" class="whatsapp-float" target="_blank" aria-label="Chat on Zalo">
         <i class="fab fa-whatsapp"></i>
+        <span class="float-text">Chat Zalo</span>
     </a>
+
+  
+
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/689a14c3216b4c19258d1b3b/1j2cu2765';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
         // Set current year in copyright
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Mobile Menu Functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
         const mobileNav = document.getElementById('mobileNav');
         const mobileOverlay = document.getElementById('mobileOverlay');
         const body = document.body;
@@ -408,6 +728,7 @@
         }
 
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
         mobileOverlay.addEventListener('click', closeMobileMenu);
 
         // Close mobile menu when clicking on a link
@@ -470,14 +791,14 @@
 
             const form = e.target;
             const formData = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
+            const submitButton = form.querySelector('.submit-button');
             const formMessages = document.getElementById('form-messages');
             const loadingSpinner = document.getElementById('loading-spinner');
 
             // Show loading spinner
             loadingSpinner.style.display = 'block';
             submitButton.disabled = true;
-            submitButton.innerHTML = 'Đang gửi...';
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
 
             // Hide any previous messages
             formMessages.style.display = 'none';
@@ -493,7 +814,7 @@
 
                 if (response.ok) {
                     // Success message
-                    formMessages.innerHTML = '<i class="fas fa-check-circle"></i> Cảm ơn bạn! Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.';
+                    formMessages.innerHTML = '<i class="fas fa-check-circle"></i> <strong>Cảm ơn bạn!</strong> Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.';
                     formMessages.className = 'message success';
                     formMessages.style.display = 'block';
 
@@ -501,20 +822,20 @@
                     form.reset();
                 } else {
                     // Error message
-                    formMessages.innerHTML = '<i class="fas fa-exclamation-circle"></i> Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại sau hoặc liên hệ trực tiếp qua số điện thoại.';
+                    formMessages.innerHTML = '<i class="fas fa-exclamation-circle"></i> <strong>Có lỗi xảy ra!</strong> Vui lòng thử lại sau hoặc liên hệ trực tiếp qua số điện thoại.';
                     formMessages.className = 'message error';
                     formMessages.style.display = 'block';
                 }
             } catch (error) {
                 // Network error
-                formMessages.innerHTML = '<i class="fas fa-exclamation-circle"></i> Có lỗi kết nối xảy ra. Vui lòng kiểm tra kết nối internet và thử lại.';
+                formMessages.innerHTML = '<i class="fas fa-exclamation-circle"></i> <strong>Lỗi kết nối!</strong> Vui lòng kiểm tra kết nối internet và thử lại.';
                 formMessages.className = 'message error';
                 formMessages.style.display = 'block';
             } finally {
                 // Hide loading spinner and reset button
                 loadingSpinner.style.display = 'none';
                 submitButton.disabled = false;
-                submitButton.innerHTML = 'Gửi yêu cầu';
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Gửi yêu cầu ngay';
 
                 // Scroll to form messages
                 formMessages.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -542,7 +863,42 @@
                 }, 300);
             });
         });
+
+        // Tawk.to Chat Button Functionality
+        const tawktoChatBtn = document.getElementById('tawkto-chat-btn');
+        const chatNotification = document.getElementById('chatNotification');
+        
+        // Open Tawk.to chat when button is clicked
+        tawktoChatBtn.addEventListener('click', function() {
+            if (typeof Tawk_API !== 'undefined') {
+                Tawk_API.toggle();
+                // Hide notification when chat is opened
+                chatNotification.style.display = 'none';
+            }
+        });
+        
+        // Add animation to floating buttons
+        document.querySelectorAll('.whatsapp-float, .tawkto-float').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.querySelector('.float-text').style.opacity = '1';
+                this.querySelector('.float-text').style.transform = 'translateX(0)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.querySelector('.float-text').style.opacity = '0';
+                this.querySelector('.float-text').style.transform = 'translateX(10px)';
+            });
+        });
+        
+        // Hide notification after 10 seconds
+        setTimeout(() => {
+            chatNotification.style.opacity = '0';
+            setTimeout(() => {
+                chatNotification.style.display = 'none';
+            }, 300);
+        }, 10000);
     </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
